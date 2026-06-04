@@ -10,4 +10,5 @@ tzdata==2024.1
 requests==2.32.3
 python-dotenv==1.2.2
 dj-database-url
-psycopg2-binary
+psycopg2-binary4
+django-cloudinary-storage
