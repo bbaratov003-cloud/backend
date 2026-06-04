@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url  # Yangi bazani ulash uchun kutubxona
 
 # .env faylini yuklash (manage.py bilan bir joyda)
 load_dotenv()
@@ -57,11 +58,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# Yangi, xavfsiz va o'chib ketmaydigan bulutli PostgreSQL bazasi sozlamasi
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",
+        conn_max_age=600
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = []
