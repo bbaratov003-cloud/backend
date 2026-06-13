@@ -78,11 +78,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Telegram sozlamalari (Render va .env dan o‘qiladi)
+# Telegram Bot sozlamalari
 TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
-# Supabase konfiguratsiyasi
+# Supabase Storage konfiguratsiyasi
+DEFAULT_FILE_STORAGE = 'django_storage_supabase.storage.SupabaseStorage'
+
 SUPABASE_URL = os.environ.get('SUPABASE_URL')
 SUPABASE_KEY = os.environ.get('SUPABASE_KEY')
+SUPABASE_BUCKET_NAME = 'media'
