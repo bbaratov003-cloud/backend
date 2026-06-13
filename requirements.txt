@@ -11,4 +11,4 @@ requests==2.32.3
 python-dotenv==1.2.2
 dj-database-url
 psycopg2-binary4
-django-cloudinary-storage
+django-storage-supabase
