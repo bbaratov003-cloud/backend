@@ -84,3 +84,12 @@ TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 print("TOKEN:", TELEGRAM_BOT_TOKEN)
 print("CHAT_ID:", TELEGRAM_CHAT_ID)
+
+
+# Supabase Storage konfiguratsiyasi
+DEFAULT_FILE_STORAGE = 'django_storage_supabase.storage.SupabaseStorage'
+
+SUPABASE_URL = os.environ.get('SUPABASE_URL')
+SUPABASE_KEY = os.environ.get('SUPABASE_KEY')
+SUPABASE_BUCKET_NAME = 'media'
+
