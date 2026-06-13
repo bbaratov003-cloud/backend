@@ -8,3 +8,4 @@ gunicorn
 supabase
 requests
 Pillow
+django-storage-supabase
